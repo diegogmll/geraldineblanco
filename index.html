@@ -262,6 +262,41 @@
         .estrellas:hover{
             text-decoration: underline;
         }
+        
+        .carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 8px solid rgb(212, 158, 21);
+    box-shadow: rgb(212, 173, 77) 0em 0.2em 0.9em, 0em -0.05em 0.9em;
+    margin-top: 2vh;
+}
+
+.carrusel-fotos {
+    display: flex;
+    width: 100%; /* Ajustar para que ocupe todo el espacio disponible */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-fotos img {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Cubre el área sin deformar la imagen */
+    flex-shrink: 0; /* Evita que las imágenes se compriman */
+}
+footer{
+        background-color:  rgb(255, 174, 0);
+        color: white;
+        width: 100%;
+        margin-top: 2vh;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        padding: 0.7em;
+       }
+
         @media only screen and (max-width: 600px) {/*telefono*/
             .pag1 {
             background-image: url(fondo.jpg);
@@ -325,10 +360,10 @@
         <div class="img1"></div>
         <div class="menu"><center>
             <p class="p1">GERALDINE BLANCO<br><span style="color: white; font-size: 0.6em;">PLANIFICADORA</span></p></center>
-            <button class="button1">NOSOTROS</button>
-            <button class="button1">SERVICIOS</button>
-            <button class="button1">CONVENIOS</button>
-            <button class="button1">RESEÑAS</button>
+            <a href="#nosotros" class="button1">NOSOTROS</a>
+            <a href="#servicios" class="button1">SERVICIOS</a>
+            <a href="#convenios" class="button1">CONVENIOS</a>
+            <a href="#resenas" class="button1">RESEÑAS</a>
         </div>
     </div>
      <div class="redes">
@@ -343,8 +378,8 @@
         <span style=" color: rgb(169, 138, 59); font-size: 2.5em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; letter-spacing: 2px;">...de la mano de Geraldine Blanco</span>
      </div>
      <br><br>
-     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em;">
-     <p style="font-weight: bold; font-size: 3em;">NOSOTROS</p>
+     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em;" id="nosotros">
+     <p style="font-weight: bold; font-size: 3em;" >NOSOTROS</p>
      <p style="font-size: 1.5em; letter-spacing: 1px; margin-left: 10vw; margin-right: 10vw; text-align: center;">Somos una empresa dedicada a la organización de eventos que redefine el estándar de elegancia y confort siendo un recinto ubicado en una zona con fácil acceso siendo esté un entorno familiar y amigable para realizar eventos desde bautizos, primera comuniones hasta bodas civiles. siendo este un lugar perfecto en el cual ofrecemos servicios de organización y logística, tomando como objetivo un entorno profesional que denote el éxito de todos tus eventos. </p>
      <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
      <div class="nosotros">
@@ -369,7 +404,7 @@
             </div>
         </div>
      </div>
-     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
+     <hr id="servicios" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
      <div class="services">SERVICIOS</div>
      <div class="servicios">
         <div class="container">
@@ -390,11 +425,11 @@
         </div>
         <div class="container">
             <div class="fotos" style="background-image: url(img14.jpg);"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">BARRRAS DE SNACKS</div>
+            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">BARRAS DE SNACKS</div>
         </div>
      </div>
-     <div class="galeria"><button class="galery">Explora nuestra galería →</button></div>
-     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
+     <!-- <div class="galeria"><button class="galery">Explora nuestra galería →</button></div> -->
+     <hr id="convenios" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
      <div class="services">CONVENIOS</div>
      <div class="contenedor-convenio">
         <div class="img-convenio"></div>
@@ -425,5 +460,22 @@
             </a>
         </div>
      </div>
+     <hr id="resenas" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
+     <div class="services">RESEÑAS</div>
+     <div class="carrusel">
+        <div class="carrusel-fotos">
+            <img src="resena1.jpg" alt="Foto 1">
+            <img src="resena3.jpg" alt="Foto 2">
+            <img src="resena2.jpg" alt="Foto 3">
+        </div>
+    </div>
+    <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
+    <footer> <!--Contenedor para el pie de página-->
+           
+        ¡Gracias por visitarnos!
+        <br>
+        Esperamos verte pronto...
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
