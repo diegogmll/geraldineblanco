@@ -86,17 +86,21 @@ img {
 /* Menú */
 
 .nav {
-    position: fixed; /* <-- Cambiamos 'absolute' por 'fixed' para que te siga */
+    position: fixed;
+
     top: 22px;
     left: 50%;
+
     transform: translateX(-50%);
 
     width: min(92%, 1100px);
 
-    z-index: 999; /* <-- Lo subimos a 999 para que siempre esté por encima de todo */
+    z-index: 999;
 
     display: flex;
+
     justify-content: center;
+
     gap: 8px;
 
     padding: 8px;
@@ -107,13 +111,17 @@ img {
     -webkit-backdrop-filter: blur(18px);
 
     border: 1px solid rgba(255,255,255,0.12);
+
     border-radius: 50px;
 }
+
 .nav a {
     color: rgba(255,255,255,0.82);
 
     font-size: 12px;
+
     letter-spacing: 1.4px;
+
     text-transform: uppercase;
 
     padding: 11px 19px;
@@ -125,6 +133,7 @@ img {
 
 .nav a:hover {
     color: white;
+
     background: rgba(255,255,255,0.1);
 }
 
@@ -133,12 +142,15 @@ img {
 
 .hero {
     min-height: 720px;
+
     height: 92vh;
 
     position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -157,8 +169,10 @@ img {
     content: "";
 
     position: absolute;
+
     left: 0;
     right: 0;
+
     bottom: 0;
 
     height: 150px;
@@ -171,6 +185,7 @@ img {
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     width: min(90%, 900px);
@@ -184,13 +199,17 @@ img {
 
 .hero-kicker {
     display: inline-flex;
+
     align-items: center;
+
     gap: 12px;
 
     color: var(--gold-light);
 
     font-size: 12px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
 
     margin-bottom: 20px;
@@ -201,6 +220,7 @@ img {
     content: "";
 
     width: 35px;
+
     height: 1px;
 
     background: var(--gold-light);
@@ -222,7 +242,9 @@ img {
     margin-top: 22px;
 
     font-size: 14px;
+
     letter-spacing: 5px;
+
     text-transform: uppercase;
 
     color: rgba(255,255,255,0.85);
@@ -236,6 +258,7 @@ img {
     color: rgba(255,255,255,0.75);
 
     font-size: 16px;
+
     line-height: 1.8;
 }
 
@@ -247,10 +270,13 @@ img {
     padding: 14px 28px;
 
     border: 1px solid rgba(255,255,255,0.5);
+
     border-radius: 30px;
 
     font-size: 12px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 
     transition: 0.35s ease;
@@ -258,6 +284,7 @@ img {
 
 .hero-button:hover {
     background: white;
+
     color: var(--black);
 
     transform: translateY(-3px);
@@ -268,6 +295,7 @@ img {
 
 section {
     padding: 70px 7%;
+
     position: relative;
 }
 
@@ -285,9 +313,11 @@ section {
     color: var(--gold);
 
     font-size: 11px;
+
     font-weight: bold;
 
     letter-spacing: 3px;
+
     text-transform: uppercase;
 }
 
@@ -313,6 +343,7 @@ section {
 
 .section-line {
     width: 86%;
+
     height: 1px;
 
     margin: 0 7%;
@@ -330,12 +361,15 @@ section {
 
 .social-section {
     padding-top: 22px;
+
     padding-bottom: 35px;
 }
 
 .social-area {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
@@ -361,7 +395,9 @@ section {
     color: var(--gold);
 
     font-size: 10px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 
     margin-bottom: 5px;
@@ -377,6 +413,7 @@ section {
 
 .social-links {
     display: flex;
+
     gap: 10px;
 
     flex-wrap: wrap;
@@ -384,10 +421,13 @@ section {
 
 .social-button {
     min-width: 155px;
+
     height: 48px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -401,9 +441,11 @@ section {
     background: white;
 
     font-size: 11px;
+
     font-weight: bold;
 
     letter-spacing: 1px;
+
     text-transform: uppercase;
 
     transition:
@@ -422,6 +464,7 @@ section {
 
 .social-button img {
     width: 23px;
+
     height: 23px;
 
     object-fit: contain;
@@ -429,19 +472,61 @@ section {
 
 .tiktok-icon {
     width: 23px;
+
     height: 23px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
     background: #111;
+
     color: white;
 
     font-size: 12px;
+
     font-weight: bold;
+}
+
+
+/* TikTok */
+
+.tiktok-section {
+    padding-top: 5px;
+
+    padding-bottom: 45px;
+}
+
+.tiktok-container {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    max-height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+}
+
+.tiktok-embed {
+    width: 100% !important;
+
+    max-width: none !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    border: none !important;
 }
 
 
@@ -483,9 +568,11 @@ section {
     position: absolute;
 
     top: 18px;
+
     left: 18px;
 
     width: 45px;
+
     height: 2px;
 
     background: var(--gold);
@@ -533,6 +620,7 @@ section {
 
 .profile-image {
     width: 260px;
+
     height: 260px;
 
     margin: auto;
@@ -548,6 +636,7 @@ section {
 
 .profile-image img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -747,6 +836,7 @@ section {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -851,6 +941,7 @@ section {
 
 .venue-image img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -900,6 +991,7 @@ section {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: fit-content;
@@ -971,6 +1063,7 @@ section {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     background: white;
@@ -994,11 +1087,13 @@ section {
     transform: translateY(-50%);
 
     width: 46px;
+
     height: 46px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border: 1px solid rgba(0,0,0,0.08);
@@ -1046,6 +1141,7 @@ section {
 
 .carousel-dot {
     width: 7px;
+
     height: 7px;
 
     padding: 0;
@@ -1098,6 +1194,7 @@ section {
 
 .contact .section-heading {
     margin-left: auto;
+
     margin-right: auto;
 }
 
@@ -1105,6 +1202,7 @@ section {
     color: rgba(255,255,255,0.6);
 
     margin-left: auto;
+
     margin-right: auto;
 }
 
@@ -1187,6 +1285,7 @@ footer p {
 
 .footer-line {
     width: 60px;
+
     height: 1px;
 
     margin: 20px auto;
@@ -1213,6 +1312,7 @@ footer p {
 
     .hero {
         min-height: 650px;
+
         height: 88vh;
     }
 
@@ -1258,6 +1358,10 @@ footer p {
         flex-direction: column;
 
         align-items: flex-start;
+    }
+
+    .tiktok-container {
+        max-height: 480px;
     }
 
 }
@@ -1355,12 +1459,35 @@ footer p {
         min-width: 0;
     }
 
+
+    /* TikTok en celular */
+
+    .tiktok-section {
+        padding-top: 0;
+
+        padding-bottom: 35px;
+    }
+
+    .tiktok-container {
+        width: 100%;
+
+        max-height: 450px;
+
+        border-radius: 18px;
+    }
+
+    .tiktok-embed {
+        border-radius: 18px !important;
+    }
+
+
     .about-main {
         padding: 27px;
     }
 
     .profile-image {
         width: 205px;
+
         height: 205px;
     }
 
@@ -1403,6 +1530,7 @@ footer p {
 
     .carousel-btn {
         width: 40px;
+
         height: 40px;
 
         font-size: 18px;
