@@ -29,7 +29,7 @@ revealElements.forEach((element) => {
 });
 
 
-/* Carrusel de reseÃ±as */
+/* Carrusel de reseñas */
 
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".review-slide");
@@ -100,7 +100,7 @@ function previousSlide() {
 }
 
 
-/* BotÃ³n siguiente */
+/* Botón siguiente */
 
 nextButton.addEventListener("click", () => {
 
@@ -111,7 +111,7 @@ nextButton.addEventListener("click", () => {
 });
 
 
-/* BotÃ³n anterior */
+/* Botón anterior */
 
 prevButton.addEventListener("click", () => {
 
@@ -139,7 +139,7 @@ dots.forEach((dot) => {
 });
 
 
-/* Cambio automÃ¡tico */
+/* Cambio automático */
 
 function startAutoPlay() {
 
@@ -241,7 +241,7 @@ function handleSwipe() {
 }
 
 
-/* Cambiar reseÃ±as con las flechas del teclado */
+/* Cambiar reseñas con las flechas del teclado */
 
 document.addEventListener("keydown", (event) => {
 
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Carrusel de reseÃ±as
+    // Carrusel de reseñas
     const track = document.querySelector(".carousel-track");
     const slides = document.querySelectorAll(".review-slide");
     const prevButton = document.querySelector(".carousel-btn.prev");
@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoPlay();
 
 
-    // ProtecciÃ³n bÃ¡sica de la pÃ¡gina
+    // Protección básica de la página
     document.addEventListener("contextmenu", (event) => {
         event.preventDefault();
     });
