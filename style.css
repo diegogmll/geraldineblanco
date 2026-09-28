@@ -86,14 +86,14 @@ img {
 /* Menú */
 
 .nav {
-    position: absolute;
+    position: fixed; /* <-- Cambiamos 'absolute' por 'fixed' para que te siga */
     top: 22px;
     left: 50%;
     transform: translateX(-50%);
 
     width: min(92%, 1100px);
 
-    z-index: 20;
+    z-index: 999; /* <-- Lo subimos a 999 para que siempre esté por encima de todo */
 
     display: flex;
     justify-content: center;
@@ -109,7 +109,6 @@ img {
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 50px;
 }
-
 .nav a {
     color: rgba(255,255,255,0.82);
 
