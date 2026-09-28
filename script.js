@@ -1,4 +1,6 @@
-/* Animaciones al hacer scroll */
+/* =========================================================
+   ANIMACIONES AL HACER SCROLL
+   ========================================================= */
 
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -25,31 +27,43 @@ const revealObserver = new IntersectionObserver(
 
 
 revealElements.forEach((element) => {
+
     revealObserver.observe(element);
+
 });
 
 
-/* Carrusel de reseñas */
+
+/* =========================================================
+   CARRUSEL DE RESEÑAS
+   ========================================================= */
 
 const track = document.querySelector(".carousel-track");
+
 const slides = document.querySelectorAll(".review-slide");
 
 const nextButton = document.querySelector(".carousel-btn.next");
+
 const prevButton = document.querySelector(".carousel-btn.prev");
 
 const dots = document.querySelectorAll(".carousel-dot");
 
 let currentIndex = 0;
+
 let autoPlay;
 
 
-/* Cambiar de imagen */
+
+/* Cambiar de reseña */
 
 function showSlide(index) {
 
     if (!track || slides.length === 0) {
+
         return;
+
     }
+
 
     if (index >= slides.length) {
 
@@ -72,10 +86,9 @@ function showSlide(index) {
 
     const offset = currentIndex * 100;
 
-    track.style.transform = `translateX(-${offset}%)`;
+    track.style.transform =
+        `translateX(-${offset}%)`;
 
-
-    /* Actualizar los puntos */
 
     dots.forEach((dot, index) => {
 
@@ -96,7 +109,8 @@ function showSlide(index) {
 }
 
 
-/* Siguiente imagen */
+
+/* Siguiente */
 
 function nextSlide() {
 
@@ -105,13 +119,15 @@ function nextSlide() {
 }
 
 
-/* Imagen anterior */
+
+/* Anterior */
 
 function previousSlide() {
 
     showSlide(currentIndex - 1);
 
 }
+
 
 
 /* Botón siguiente */
@@ -129,6 +145,7 @@ if (nextButton) {
 }
 
 
+
 /* Botón anterior */
 
 if (prevButton) {
@@ -144,13 +161,15 @@ if (prevButton) {
 }
 
 
-/* Botones inferiores */
+
+/* Puntos */
 
 dots.forEach((dot) => {
 
     dot.addEventListener("click", () => {
 
-        const slideNumber = Number(dot.dataset.slide);
+        const slideNumber =
+            Number(dot.dataset.slide);
 
         showSlide(slideNumber);
 
@@ -161,7 +180,10 @@ dots.forEach((dot) => {
 });
 
 
-/* Cambio automático */
+
+/* =========================================================
+   CAMBIO AUTOMÁTICO
+   ========================================================= */
 
 function startAutoPlay() {
 
@@ -185,38 +207,54 @@ function restartAutoPlay() {
 }
 
 
-/* Iniciar carrusel */
+
+/* Iniciar */
 
 showSlide(0);
 
 startAutoPlay();
 
 
-/* Pausar el carrusel cuando se pasa el mouse */
 
-const carousel = document.querySelector(".review-carousel");
+/* =========================================================
+   PAUSAR AL PASAR EL MOUSE
+   ========================================================= */
+
+const carousel =
+    document.querySelector(".review-carousel");
+
 
 if (carousel) {
 
-    carousel.addEventListener("mouseenter", () => {
+    carousel.addEventListener(
+        "mouseenter",
+        () => {
 
-        clearInterval(autoPlay);
+            clearInterval(autoPlay);
 
-    });
+        }
+    );
 
 
-    carousel.addEventListener("mouseleave", () => {
+    carousel.addEventListener(
+        "mouseleave",
+        () => {
 
-        startAutoPlay();
+            startAutoPlay();
 
-    });
+        }
+    );
 
 }
 
 
-/* Deslizar el carrusel en celular */
+
+/* =========================================================
+   SWIPE EN CELULAR
+   ========================================================= */
 
 let touchStartX = 0;
+
 let touchEndX = 0;
 
 
@@ -226,7 +264,8 @@ if (carousel) {
         "touchstart",
         (event) => {
 
-            touchStartX = event.changedTouches[0].screenX;
+            touchStartX =
+                event.changedTouches[0].screenX;
 
         },
         {
@@ -239,7 +278,8 @@ if (carousel) {
         "touchend",
         (event) => {
 
-            touchEndX = event.changedTouches[0].screenX;
+            touchEndX =
+                event.changedTouches[0].screenX;
 
             handleSwipe();
 
@@ -251,7 +291,8 @@ if (carousel) {
 
 function handleSwipe() {
 
-    const difference = touchStartX - touchEndX;
+    const difference =
+        touchStartX - touchEndX;
 
 
     if (Math.abs(difference) < 50) {
@@ -279,108 +320,127 @@ function handleSwipe() {
 }
 
 
-/* Cambiar reseñas con las flechas del teclado */
 
-document.addEventListener("keydown", (event) => {
+/* =========================================================
+   FLECHAS DEL TECLADO
+   ========================================================= */
 
-    if (event.key === "ArrowRight") {
+document.addEventListener(
+    "keydown",
+    (event) => {
 
-        nextSlide();
+        if (event.key === "ArrowRight") {
 
-        restartAutoPlay();
+            nextSlide();
+
+            restartAutoPlay();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousSlide();
+
+            restartAutoPlay();
+
+        }
 
     }
+);
 
 
-    if (event.key === "ArrowLeft") {
 
-        previousSlide();
+/* =========================================================
+   PROTECCIÓN BÁSICA DE LA PÁGINA
+   ========================================================= */
 
-        restartAutoPlay();
+/* Bloquear clic derecho */
 
-    }
-
-});
-
-
-/* Protección básica de la página */
-
-document.addEventListener("contextmenu", (event) => {
-
-    event.preventDefault();
-
-});
-
-
-document.addEventListener("keydown", (event) => {
-
-    /* F12 */
-
-    if (event.key === "F12") {
+document.addEventListener(
+    "contextmenu",
+    (event) => {
 
         event.preventDefault();
 
-        return;
+    }
+);
+
+
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+
+        /* F12 */
+
+        if (event.key === "F12") {
+
+            event.preventDefault();
+
+            return;
+
+        }
+
+
+        /* Ctrl + U */
+
+        if (
+            event.ctrlKey &&
+            event.key.toLowerCase() === "u"
+        ) {
+
+            event.preventDefault();
+
+            return;
+
+        }
+
+
+        /* Ctrl + Shift + I */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "i"
+        ) {
+
+            event.preventDefault();
+
+            return;
+
+        }
+
+
+        /* Ctrl + Shift + J */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "j"
+        ) {
+
+            event.preventDefault();
+
+            return;
+
+        }
+
+
+        /* Ctrl + Shift + C */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "c"
+        ) {
+
+            event.preventDefault();
+
+            return;
+
+        }
 
     }
-
-
-    /* Ctrl + U */
-
-    if (
-        event.ctrlKey &&
-        event.key.toLowerCase() === "u"
-    ) {
-
-        event.preventDefault();
-
-        return;
-
-    }
-
-
-    /* Ctrl + Shift + I */
-
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "i"
-    ) {
-
-        event.preventDefault();
-
-        return;
-
-    }
-
-
-    /* Ctrl + Shift + J */
-
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "j"
-    ) {
-
-        event.preventDefault();
-
-        return;
-
-    }
-
-
-    /* Ctrl + Shift + C */
-
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "c"
-    ) {
-
-        event.preventDefault();
-
-        return;
-
-    }
-
-});
+);
