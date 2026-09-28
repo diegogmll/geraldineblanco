@@ -1,488 +1,698 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Geraldine</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        } 
-        .pag1 {
-            background-image: url(fondo.jpg);
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            /* flex-direction: column; */
-            overflow: hidden;
-            flex-wrap: wrap;
-        }
-        .img1 {
-            background-image: url(perfil.jpg);
-            height: 50vmin;
-            width: 50vmin;
-            background-size: cover; 
-            border: 6px solid rgb(255, 255, 255);
-            border-radius: 50%;
-           margin-left: 130px;
-           box-shadow: white 0.1em 0.1em 0.3em, white -0.1em -0.1em 2em;
-        }
-        .menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .button1 {
-            background-color: transparent;
-            border: 4px solid white;
-            text-decoration: none;
-            font-size: 1.3em;
-            padding: 10px;
-            width: 30vw;
-            /* max-width: 300px; */
-            color: white;
-            margin: 15px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        .button1:hover {
-            background-color: white;
-            color: black;
-            text-decoration: none;
-            transition-duration: 0.6s; 
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-        .p1{
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
 
-        }
-        /* .redes{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: -100px;
-            flex-wrap: wrap;
-        } */
-        .redes {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra los íconos en el espacio disponible */
-    margin-top: 20px; /* Ajusta el margen superior para dar espacio entre los botones y las redes */
-    flex-wrap: wrap; /* Permite que los íconos se ajusten si es necesario */
-}
-        .degradado-dorado {
-            font-size: 5em;
-            font-weight: bold;
-            background: linear-gradient(90deg, 
-                #b8860b,  /* dorado oscuro */
-                #d4af37,  /* dorado */
-                #ffef9c,  /* dorado claro */
-                #ffd900c3,  /* dorado más brillante */
-                #ffef9c,  /* dorado claro */
-                #d4af37,  /* dorado */
-                #b8860b   /* dorado oscuro */
-            );
-            background-size: 200% auto;
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-            text-fill-color: transparent;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
-        }
+    <title>Geraldine Blanco | Planeación de Eventos</title>
 
-        @keyframes shine {
-            0% {
-                background-position: 0% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
-        .nosotros{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-top: 55px;
-            margin-left: 8vw;
-            margin-right: 8vw;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        .nosotros2{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            width: 400px;
-            text-align: justify;
-        }
-        .services{
-            font-size: 5em;
-            margin-top: 3vh;
-            font-weight: bold;
-            background: linear-gradient(90deg, 
-                #a77a09,  /* dorado oscuro */
-                #d4af37,  /* dorado */
-                #ffef9c,  /* dorado claro */
-                #ffd900c3,  /* dorado más brillante */
-                #ffef9c,  /* dorado claro */
-                #d4af37,  /* dorado */
-                #b8860b   /* dorado oscuro */
-            );
-            background-size: 200% auto;
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-            text-fill-color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-        .servicios{ /*Contenedor para los servicios*/
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-left: 8vw;
-            margin-right: 8vw;
-            margin-top: 5vh;
-            max-width: 1600px;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            flex: 0 0 33%;
-            margin-bottom: 70px;
-        }
-        .fotos{
-            background-image: url(img22.jpg);
-            height: 280px; 
-            width: 280px; 
-            background-size: cover; 
-            border-radius: 50%;
-            border: 8px solid rgb(212, 158, 21);
-            box-shadow: rgb(212, 173, 77) 0em 0.2em 0.9em, 0em -0.05em 0.9em;
-        }
-        .fotos:hover{
-            height: 350px;
-            width: 350px;
-            transition-duration: 0.5s;
-            box-shadow:  rgb(212, 173, 77) 0em 0.2em 0.9em, 0em -0.05em 0.9em;
-            border: 8px solid goldenrod;
-        }
-        .galeria{
-            display: flex;
-            align-items: center;
-            justify-content: center;   
-            margin-left: 13vw;
-            margin-right: 13vw;
-        }
-        .galery{
-            color: goldenrod;
-            text-decoration: none;
-            font-size: 1.7em;
-            background-color: transparent;
-            border: transparent;
-        }
-        .galery:hover{
-            color: rgb(219, 172, 56);
-            font-size: 1.8em;
-            transition-duration: 0.2s;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .contenedor-convenio{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 5vh;
-        }
-        .img-convenio{
-            background-image: url(convenio.jpg);
-            border-radius: 50%;
-            height: 43vmin;
-            width: 43vmin;
-            background-size: cover; 
-            border: 8px solid rgb(212, 158, 21);
-            box-shadow: rgb(212, 173, 77) 0em 0.2em 0.9em, 0em -0.05em 0.9em;
-        }
-        .convenio{
-            display: flex;
-            align-items: left;
-            justify-content: left;
-            flex-wrap: wrap;
-            width: 33%;
-            flex-direction: column;
-            text-align: left;
-            margin-left: 8vh;
-        }
-        .jardin{
-            font-size: 2em;
-            font-weight: bold;
-            background: linear-gradient(90deg, 
-                #a77a09,  /* dorado oscuro */
-                #d4af37,  /* dorado */
-                #e7d36c,  /* dorado claro */
-                #ffd900c3,  /* dorado más brillante */
-                #ffef9c,  /* dorado claro */
-                #d4af37,  /* dorado */
-                #b8860b   /* dorado oscuro */
-            );
-            background-size: 200% auto;
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-            text-fill-color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-        .ubi{
-            color: rgb(4, 121, 230);
-            font-size: 1.3em;
-            text-decoration: none;
-            margin-left: 1vh;
-        }
-        .ubi:hover{
-            text-decoration: underline;
-        }
-        .ubi2{
-            color: rgb(0, 0, 0);
-            font-size: 1.3em;
-            text-decoration: none;
-            margin-left: 1vh;
-        }
-        .estrellas{
-            text-decoration: none;
-        }
-        .estrellas:hover{
-            text-decoration: underline;
-        }
-        
-        .carrusel {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    border: 8px solid rgb(212, 158, 21);
-    box-shadow: rgb(212, 173, 77) 0em 0.2em 0.9em, 0em -0.05em 0.9em;
-    margin-top: 2vh;
-}
-
-.carrusel-fotos {
-    display: flex;
-    width: 100%; /* Ajustar para que ocupe todo el espacio disponible */
-    transition: transform 0.5s ease-in-out;
-}
-
-.carrusel-fotos img {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Cubre el área sin deformar la imagen */
-    flex-shrink: 0; /* Evita que las imágenes se compriman */
-}
-footer{
-        background-color:  rgb(255, 174, 0);
-        color: white;
-        width: 100%;
-        margin-top: 2vh;
-        font-size: 2em;
-        display: flex;
-        justify-content: center;
-        font-weight: bold;
-        padding: 0.7em;
-       }
-
-        @media only screen and (max-width: 600px) {/*telefono*/
-            .pag1 {
-            background-image: url(fondo.jpg);
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 95vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* flex-direction: column; */
-            /* overflow: hidden;  */
-            flex-wrap: wrap;
-        }
-        .button1{
-            width: 60vw;
-        }
-        .container{
-            flex: 0 0 50%; 
-        }
-        }
-        /* Estilos para tabletas */
-        @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .pag1 {
-            background-image: url(fondo.jpg);
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 95vh;
-            display: block;
-            align-items:center;
-            justify-content: center;
-            /* flex-direction: column; */
-            /* overflow: hidden; */
-            flex-wrap: wrap; 
-        }
-        .button1{
-            width: 70vw;
-        }
-        .redes{
-            margin-top: -100px;
-        }
-        .img1 {
-            background-image: url(perfil.jpg);
-            height: 50vmin;
-            width: 50vmin;
-            background-size: cover; 
-            margin-bottom: 20px;
-            border: 6px solid rgb(255, 255, 255);
-            border-radius: 50%;
-           box-shadow: white 0.1em 0.1em 0.3em, white -0.1em -0.1em 2em;
-        }
-        }
-         /* Estilos para pantallas grandes (escritorio) */
-         @media only screen and (min-width: 1025px) {
-         }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="pag1">
-        <div class="img1"></div>
-        <div class="menu"><center>
-            <p class="p1">GERALDINE BLANCO<br><span style="color: white; font-size: 0.6em;">PLANIFICADORA</span></p></center>
-            <a href="#nosotros" class="button1">NOSOTROS</a>
-            <a href="#servicios" class="button1">SERVICIOS</a>
-            <a href="#convenios" class="button1">CONVENIOS</a>
-            <a href="#resenas" class="button1">RESEÑAS</a>
-        </div>
-    </div>
-     <div class="redes">
-                <a href="https://www.instagram.com/jardinanapaula?igsh=NDhuMmd2NXo5czd0" target="_blank"><div style="background-image: url(ig.png); height: 50px; width: 50px; background-size: cover; filter: "></div></a> 
-                <a href="https://www.facebook.com/anapau.jardineventos?mibextid=LQQJ4d" target="_blank"><div style="background-image: url(fb.webp); height: 67px; width: 67px; background-size: cover;  margin-left: 20px;"></div></a> 
-     </div> <center>
-     <!-- <p style="font-size: 5em; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">EL MAS GRANDE DE TUS EVENTOS</p>
-     <p>...de la mano de Geraldine Blanco</p></center> -->
-     <br><br>
-     <div style="margin-top: 0dvb;">
-        <span class="degradado-dorado">EL MÁS GRANDE DE TUS EVENTOS</span><br><br>
-        <span style=" color: rgb(169, 138, 59); font-size: 2.5em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; letter-spacing: 2px;">...de la mano de Geraldine Blanco</span>
-     </div>
-     <br><br>
-     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em;" id="nosotros">
-     <p style="font-weight: bold; font-size: 3em;" >NOSOTROS</p>
-     <p style="font-size: 1.5em; letter-spacing: 1px; margin-left: 10vw; margin-right: 10vw; text-align: center;">Somos una empresa dedicada a la organización de eventos que redefine el estándar de elegancia y confort siendo un recinto ubicado en una zona con fácil acceso siendo esté un entorno familiar y amigable para realizar eventos desde bautizos, primera comuniones hasta bodas civiles. siendo este un lugar perfecto en el cual ofrecemos servicios de organización y logística, tomando como objetivo un entorno profesional que denote el éxito de todos tus eventos. </p>
-     <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
-     <div class="nosotros">
-        <div class="nosotros2">
-            <div  style="font-weight: bold; font-size: 2.3em;">MISIÓN</div><br>
-            <div style="font-size: 1.3em; letter-spacing: 1px; text-align: center;">Nuestra misión es ofrecer un espacio de eventos, conectado con la naturaleza que ofrezca confort y elegancia, adaptándose a cada ocasión así como transmitir un excelente servicio, el cual ayude a superar las expectativas de nuestros clientes.</div>
-        </div>
-        <div class="nosotros2">
-            <div style="font-weight: bold; font-size: 2.3em;">VISIÓN</div><br>
-            <div style="font-size: 1.3em; letter-spacing: 1px; text-align: center;">Convertirnos en una  marca conocida por nuestros recintos de eventos, así como los servicios que ofrecemos siendo estos reconocidos por la capacidad de transformar ideas y llevarlas a la realidad. aspirando siempre a la innovación constante para ofrecer experiencias únicas y memoriales.</div>
-        </div> 
-        <div class="nosotros2">
-            <div style="font-weight: bold; font-size: 2.3em;">VALORES</div><br>
-            <div style="font-size: 1.3em; letter-spacing: 1px; text-align: center;">
-                <ul>
-                    <li>Transparencia</li>
-                    <li>Creatividad e Innovación</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Excelencia en servicios</li>
-                    <li>Lugar y antecedentes</li>
-                </ul>
+
+    <!-- Menú principal -->
+    <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+
+    <!-- Inicio -->
+    <header class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                Planeación de eventos
             </div>
-        </div>
-     </div>
-     <hr id="servicios" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
-     <div class="services">SERVICIOS</div>
-     <div class="servicios">
-        <div class="container">
-            <div class="fotos" style="background-image: url(img18.jpg);"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">ORGANIZACIÓN Y LOGÍSTICA</div>
-        </div>
-        <div class="container">
-            <div class="fotos"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">DECORACIÓN</div>
-        </div>
-        <div class="container">
-            <div class="fotos" style="background-image: url(img1.jpg);"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">CANTARITOS</div>
-        </div>
-        <div class="container">
-            <div class="fotos" style="background-image: url(img20.jpg);"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">MESAS DE DULCES</div>
-        </div>
-        <div class="container">
-            <div class="fotos" style="background-image: url(img14.jpg);"></div>
-            <div style="font-size: 2em; letter-spacing: 1px; font-family: monospace; font-weight: bold; margin-top: 2vh;">BARRAS DE SNACKS</div>
-        </div>
-     </div>
-     <!-- <div class="galeria"><button class="galery">Explora nuestra galería →</button></div> -->
-     <hr id="convenios" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
-     <div class="services">CONVENIOS</div>
-     <div class="contenedor-convenio">
-        <div class="img-convenio"></div>
-        <div class="convenio">
-            <div class="jardin">JARDIN DE EVENTOS "ANA PAULA"</div><br>
-            <div style="display: flex; align-items: center; justify-content: left; margin-top: 1.5vh;">
-                <div style="background-image: url(ubicacion.png); background-size: cover; height: 30px; width:30px;"></div>
-                <a href="https://maps.app.goo.gl/Rv8SEaHGoZNwigAbA" target="_blank" class="ubi">Av. Genovevo Rivas Guillén norte #3113</a>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: left; margin-top: 1vh;">
-                <div style="background-image: url(telefono.webp); background-size: cover; height: 30px; width:30px;"></div>
-                <span class="ubi2">444 501 1362</span>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: left; margin-top: 1vh;">
-                <div style="background-image: url(mail.png); background-size: cover; height: 30px; width:30px;"></div>
-                <span class="ubi2">geraldine.br93@gmail.com</span>
-            </div>
-            <a class="estrellas" target="_blank" href="https://www.google.com.mx/maps/place/Jard%C3%ADn+de+eventos+Ana+Paula/@22.1624749,-100.9348096,17z/data=!4m18!1m9!3m8!1s0x842aa18fb995f59b:0x24465f1cc7095355!2sJard%C3%ADn+de+eventos+Ana+Paula!8m2!3d22.1624749!4d-100.9348096!9m1!1b1!16s%2Fg%2F11rgzl7gvy!3m7!1s0x842aa18fb995f59b:0x24465f1cc7095355!8m2!3d22.1624749!4d-100.9348096!9m1!1b1!16s%2Fg%2F11rgzl7gvy?entry=ttu">
-            <div style="display: flex; align-items: center; justify-content: left; margin-top: 1vh;">
-                <span class="ubi2" style="margin-left: 0; margin-right: 0.5vw; font-size: 1.4em;">4.2 </span>
-                <div style="background-image: url(estrella.png); background-size: cover; height: 20px; width:20px;"></div>
-                <div style="background-image: url(estrella.png); background-size: cover; height: 20px; width:20px;"></div>
-                <div style="background-image: url(estrella.png); background-size: cover; height: 20px; width:20px;"></div>
-                <div style="background-image: url(estrella.png); background-size: cover; height: 20px; width:20px;"></div>
-                <div style="background-image: url(estrella.png); background-size: cover; height: 20px; width:20px; filter: grayscale();"></div>
-                <span class="ubi2" style="margin-left: 0.5vw; margin-right: 0; font-size: 1.4em;">(15 opiniones)</span>
-            </div>
+
+            <h1>
+                GERALDINE<br>
+                BLANCO
+            </h1>
+
+            <p class="hero-subtitle">
+                El más grande de tus eventos
+            </p>
+
+            <p class="hero-description">
+                Creamos experiencias elegantes y memorables,
+                cuidando cada detalle para que tú solamente
+                disfrutes el momento.
+            </p>
+
+            <a href="#servicios" class="hero-button">
+                Conoce nuestros servicios
             </a>
+
         </div>
-     </div>
-     <hr id="resenas" style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
-     <div class="services">RESEÑAS</div>
-     <div class="carrusel">
-        <div class="carrusel-fotos">
-            <img src="resena1.jpg" alt="Foto 1">
-            <img src="resena3.jpg" alt="Foto 2">
-            <img src="resena2.jpg" alt="Foto 3">
+
+    </header>
+
+
+    <!-- Redes sociales -->
+    <section class="social-section">
+
+        <div class="social-area reveal">
+
+            <div class="social-text">
+                <small>Conecta con nosotros</small>
+                <strong>Descubre más de nuestros eventos</strong>
+            </div>
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.instagram.com/jardinanapaula?igsh=NDhuMmd2NXo5czd0"
+                    target="_blank"
+                    class="social-button"
+                >
+                    <img src="ig.png" alt="Instagram">
+                    Instagram
+                </a>
+
+                <a
+                    href="https://www.facebook.com/anapau.jardineventos?mibextid=LQQJ4d"
+                    target="_blank"
+                    class="social-button"
+                >
+                    <img src="fb.webp" alt="Facebook">
+                    Facebook
+                </a>
+
+                <!-- Cambiar por el enlace real de TikTok -->
+                <a
+                    href="PENDIENTE"
+                    target="_blank"
+                    class="social-button"
+                >
+                    <span class="tiktok-icon">♪</span>
+                    Síguenos en TikTok
+                </a>
+
+            </div>
+
         </div>
-    </div>
-    <hr style="height: 1px; background-color: gainsboro; border: gainsboro; box-shadow: rgb(194, 193, 193) 0em 0.1em 0.4em; margin-left: 10vw; margin-right: 10vw; margin-top: 50px;">
-    <footer> <!--Contenedor para el pie de página-->
-           
-        ¡Gracias por visitarnos!
-        <br>
-        Esperamos verte pronto...
+
+    </section>
+
+
+    <div class="section-line"></div>
+
+
+    <!-- Nosotros -->
+    <section class="about" id="nosotros">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Sobre nosotros
+            </span>
+
+            <h2>
+                Cada evento merece<br>
+                sentirse especial.
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-main reveal">
+
+                <p>
+                    Somos una empresa dedicada a la organización de eventos
+                    que busca redefinir el estándar de elegancia y confort.
+                    Contamos con un recinto ubicado en una zona de fácil
+                    acceso, dentro de un entorno familiar y amigable para
+                    realizar eventos como bautizos, primeras comuniones y
+                    bodas civiles.
+                </p>
+
+                <br>
+
+                <p>
+                    Nuestro objetivo es ofrecer un servicio profesional de
+                    organización y logística, cuidando cada detalle para
+                    convertir las ideas de nuestros clientes en experiencias
+                    memorables.
+                </p>
+
+                <div class="about-tags">
+                    <span>Bautizos</span>
+                    <span>Primeras comuniones</span>
+                    <span>Bodas civiles</span>
+                    <span>Eventos especiales</span>
+                </div>
+
+            </div>
+
+
+            <div class="profile-card reveal reveal-delay-1">
+
+                <div class="profile-image">
+                    <img
+                        src="perfil.jpg"
+                        alt="Geraldine Blanco"
+                    >
+                </div>
+
+                <h3>Geraldine Blanco</h3>
+
+                <p>Planificadora de eventos</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="section-line"></div>
+
+
+    <!-- Misión y visión -->
+    <section class="philosophy">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Nuestra esencia
+            </span>
+
+            <h2>
+                Una visión clara,<br>
+                una experiencia cuidada.
+            </h2>
+
+            <p>
+                Trabajamos con una filosofía enfocada en el detalle,
+                la creatividad y la satisfacción de nuestros clientes.
+            </p>
+
+        </div>
+
+
+        <div class="philosophy-grid">
+
+            <article class="philosophy-card reveal">
+
+                <div class="card-number">
+                    01 / MISIÓN
+                </div>
+
+                <h3>
+                    Confort y elegancia
+                </h3>
+
+                <p>
+                    Ofrecer un espacio conectado con la naturaleza que
+                    transmita confort y elegancia, adaptándose a cada
+                    ocasión y buscando superar las expectativas de
+                    nuestros clientes.
+                </p>
+
+            </article>
+
+
+            <article class="philosophy-card reveal reveal-delay-1">
+
+                <div class="card-number">
+                    02 / VISIÓN
+                </div>
+
+                <h3>
+                    Ideas hechas realidad
+                </h3>
+
+                <p>
+                    Convertirnos en una marca reconocida por nuestros
+                    recintos y servicios, destacando por nuestra capacidad
+                    de transformar ideas en experiencias únicas.
+                </p>
+
+            </article>
+
+
+            <article class="philosophy-card reveal reveal-delay-2">
+
+                <div class="card-number">
+                    03 / FILOSOFÍA
+                </div>
+
+                <h3>
+                    Siempre evolucionar
+                </h3>
+
+                <p>
+                    Apostamos por la innovación constante, el trabajo en
+                    equipo y la excelencia para crear eventos que nuestros
+                    clientes puedan recordar.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Valores -->
+    <section class="values-section">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Nuestros valores
+            </span>
+
+            <h2>
+                Lo que está detrás<br>
+                de cada evento.
+            </h2>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <div class="value reveal">
+                <span>01</span>
+                <h3>Transparencia</h3>
+            </div>
+
+            <div class="value reveal reveal-delay-1">
+                <span>02</span>
+                <h3>Creatividad e Innovación</h3>
+            </div>
+
+            <div class="value reveal reveal-delay-2">
+                <span>03</span>
+                <h3>Trabajo en equipo</h3>
+            </div>
+
+            <div class="value reveal">
+                <span>04</span>
+                <h3>Excelencia en servicios</h3>
+            </div>
+
+            <div class="value reveal reveal-delay-1">
+                <span>05</span>
+                <h3>Compromiso</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Lo que hacemos
+            </span>
+
+            <h2>
+                Del concepto<br>
+                a la celebración.
+            </h2>
+
+            <p>
+                Diseñamos y coordinamos diferentes elementos para que
+                cada celebración tenga personalidad propia.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <article class="service-card large reveal">
+
+                <img
+                    src="img18.jpg"
+                    alt="Organización y logística"
+                >
+
+                <div class="service-overlay">
+
+                    <span class="service-number">01</span>
+
+                    <h3>
+                        Organización y logística
+                    </h3>
+
+                    <p>
+                        Planeación y coordinación para que cada parte
+                        del evento fluya de principio a fin.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="service-card reveal reveal-delay-1">
+
+                <img
+                    src="img22.jpg"
+                    alt="Decoración"
+                >
+
+                <div class="service-overlay">
+
+                    <span class="service-number">02</span>
+
+                    <h3>
+                        Decoración
+                    </h3>
+
+                    <p>
+                        Detalles pensados para crear una atmósfera
+                        especial.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="service-card reveal">
+
+                <img
+                    src="img1.jpg"
+                    alt="Cantaritos"
+                >
+
+                <div class="service-overlay">
+
+                    <span class="service-number">03</span>
+
+                    <h3>
+                        Cantaritos
+                    </h3>
+
+                </div>
+
+            </article>
+
+
+            <article class="service-card reveal reveal-delay-1">
+
+                <img
+                    src="img20.jpg"
+                    alt="Mesa de dulces"
+                >
+
+                <div class="service-overlay">
+
+                    <span class="service-number">04</span>
+
+                    <h3>
+                        Mesas de dulces
+                    </h3>
+
+                </div>
+
+            </article>
+
+
+            <article class="service-card reveal reveal-delay-2">
+
+                <img
+                    src="img14.jpg"
+                    alt="Barras de snacks"
+                >
+
+                <div class="service-overlay">
+
+                    <span class="service-number">05</span>
+
+                    <h3>
+                        Barras de snacks
+                    </h3>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Lugar para eventos -->
+    <section class="venue">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Nuestro espacio
+            </span>
+
+            <h2>
+                Un lugar pensado<br>
+                para celebrar.
+            </h2>
+
+        </div>
+
+
+        <div class="venue-card reveal">
+
+            <div class="venue-image">
+
+                <img
+                    src="convenio.jpg"
+                    alt="Jardín de eventos Ana Paula"
+                >
+
+            </div>
+
+
+            <div class="venue-content">
+
+                <span class="section-kicker">
+                    Convenio
+                </span>
+
+                <h2>
+                    Jardín de Eventos<br>
+                    "Ana Paula"
+                </h2>
+
+                <p class="venue-address">
+                    Av. Genovevo Rivas Guillén norte #3113
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/Rv8SEaHGoZNwigAbA"
+                    target="_blank"
+                    class="venue-link"
+                >
+                    Ver ubicación
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Reseñas -->
+    <section class="reviews" id="resenas">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Experiencias
+            </span>
+
+            <h2>
+                Lo que nuestros<br>
+                clientes comparten.
+            </h2>
+
+            <p>
+                Algunas de las opiniones que han dejado nuestros clientes
+                después de vivir sus celebraciones con nosotros.
+            </p>
+
+        </div>
+
+
+        <div class="review-carousel reveal">
+
+            <div class="carousel-window">
+
+                <div class="carousel-track">
+
+                    <div class="review-slide">
+                        <img
+                            src="resena1.jpg"
+                            alt="Reseña de cliente"
+                        >
+                    </div>
+
+                    <div class="review-slide">
+                        <img
+                            src="resena3.jpg"
+                            alt="Reseña de cliente"
+                        >
+                    </div>
+
+                    <div class="review-slide">
+                        <img
+                            src="resena2.jpg"
+                            alt="Reseña de cliente"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="carousel-btn prev"
+                aria-label="Reseña anterior"
+                type="button"
+            >
+                ‹
+            </button>
+
+
+            <button
+                class="carousel-btn next"
+                aria-label="Siguiente reseña"
+                type="button"
+            >
+                ›
+            </button>
+
+
+            <div class="carousel-dots">
+
+                <button
+                    class="carousel-dot active"
+                    data-slide="0"
+                    aria-label="Ir a reseña 1"
+                    type="button"
+                ></button>
+
+                <button
+                    class="carousel-dot"
+                    data-slide="1"
+                    aria-label="Ir a reseña 2"
+                    type="button"
+                ></button>
+
+                <button
+                    class="carousel-dot"
+                    data-slide="2"
+                    aria-label="Ir a reseña 3"
+                    type="button"
+                ></button>
+
+            </div>
+
+
+            <div class="reviews-cta">
+
+                <a
+                    href="https://www.google.com.mx/maps/place/Jard%C3%ADn+de+eventos+Ana+Paula/@22.1624749,-100.9348096,17z/data=!4m18!1m9!3m8!1s0x842aa18fb995f59b:0x24465f1cc7095355!2sJard%C3%ADn+de+eventos+Ana+Paula!8m2!3d22.1624749!4d-100.9348096!9m1!1b1!16s%2Fg%2F11rgzl7gvy!3m7!1s0x842aa18fb995f59b:0x24465f1cc7095355!8m2!3d22.1624749!4d-100.9348096!9m1!1b1!16s%2Fg%2F11rgzl7gvy?entry=ttu"
+                    target="_blank"
+                >
+                    Ver todas las opiniones en Google Maps →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                Hablemos
+            </span>
+
+            <h2>
+                Hagamos realidad<br>
+                tu próximo evento.
+            </h2>
+
+            <p>
+                Ponte en contacto con nosotros para conocer más sobre
+                nuestros servicios y comenzar a planear tu celebración.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card reveal">
+
+                <span>Teléfono</span>
+
+                <a href="tel:4445011362">
+                    444 501 1362
+                </a>
+
+            </div>
+
+
+            <div class="contact-card reveal reveal-delay-1">
+
+                <span>Correo electrónico</span>
+
+                <a href="mailto:geraldine.br93@gmail.com">
+                    geraldine.br93@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <h3>
+            Geraldine Blanco
+        </h3>
+
+        <p>
+            Planeación y organización de eventos
+        </p>
+
+        <div class="footer-line"></div>
+
+        <p class="footer-copy">
+            © 2026 Geraldine Blanco. Todos los derechos reservados.
+        </p>
+
     </footer>
+
+
     <script src="script.js"></script>
+
 </body>
 </html>
