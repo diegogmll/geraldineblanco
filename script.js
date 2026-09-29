@@ -29,7 +29,38 @@ revealElements.forEach((element) => {
 });
 
 
-/* Carrusel de reseñas */
+/* MenÃº fijo y discreto al desplazarse */
+
+const navigation = document.querySelector(".nav");
+
+function updateNavigation() {
+
+    if (!navigation) {
+        return;
+    }
+
+    if (window.scrollY > 80) {
+
+        navigation.classList.add("scrolled");
+
+    }
+
+    else {
+
+        navigation.classList.remove("scrolled");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateNavigation, {
+    passive: true
+});
+
+updateNavigation();
+
+
+/* Carrusel de reseÃ±as */
 
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".review-slide");
@@ -43,7 +74,7 @@ let currentIndex = 0;
 let autoPlay;
 
 
-/* Cambiar de reseña */
+/* Cambiar de reseÃ±a */
 
 function showSlide(index) {
 
@@ -96,7 +127,7 @@ function showSlide(index) {
 }
 
 
-/* Siguiente reseña */
+/* Siguiente reseÃ±a */
 
 function nextSlide() {
 
@@ -105,7 +136,7 @@ function nextSlide() {
 }
 
 
-/* Reseña anterior */
+/* ReseÃ±a anterior */
 
 function previousSlide() {
 
@@ -114,7 +145,7 @@ function previousSlide() {
 }
 
 
-/* Botón siguiente */
+/* BotÃ³n siguiente */
 
 if (nextButton) {
 
@@ -129,7 +160,7 @@ if (nextButton) {
 }
 
 
-/* Botón anterior */
+/* BotÃ³n anterior */
 
 if (prevButton) {
 
@@ -161,7 +192,7 @@ dots.forEach((dot) => {
 });
 
 
-/* Cambio automático */
+/* Cambio automÃ¡tico */
 
 function startAutoPlay() {
 
@@ -278,7 +309,7 @@ function handleSwipe() {
 }
 
 
-/* Cambiar reseñas con las flechas del teclado */
+/* Cambiar reseÃ±as con las flechas del teclado */
 
 document.addEventListener("keydown", (event) => {
 
@@ -302,7 +333,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-/* Protección básica de la página */
+/* ProtecciÃ³n bÃ¡sica de la pÃ¡gina */
 
 
 /* Bloquear clic derecho */
