@@ -34,6 +34,32 @@ a {
     color: inherit;
 }
 
+/* Luz ambiental muy tenue */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(85px);
+    opacity: 0.10;
+}
+
+body::before {
+    top: 12%;
+    left: -180px;
+    background: rgba(183, 154, 103, 0.32);
+}
+
+body::after {
+    top: 52%;
+    right: -190px;
+    background: rgba(212, 189, 142, 0.24);
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -86,14 +112,14 @@ img {
 /* Menú */
 
 .nav {
-    position: absolute;
+    position: fixed;
     top: 22px;
     left: 50%;
     transform: translateX(-50%);
 
     width: min(92%, 1100px);
 
-    z-index: 20;
+    z-index: 1000;
 
     display: flex;
     justify-content: center;
@@ -108,7 +134,26 @@ img {
 
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 50px;
+
+    transition:
+        top 0.35s ease,
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
 }
+
+.nav.scrolled {
+    top: 12px;
+    opacity: 0.72;
+    background: rgba(20, 20, 20, 0.42);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.nav.scrolled:hover {
+    opacity: 0.95;
+}
+
 .nav a {
     color: rgba(255,255,255,0.82);
 
