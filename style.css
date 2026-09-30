@@ -1233,11 +1233,11 @@ section {
 }
 
 .carousel-btn.prev {
-    left: -23px;
+    left: 18px;
 }
 
 .carousel-btn.next {
-    right: -23px;
+    right: 18px;
 }
 
 .carousel-dots {
@@ -1714,4 +1714,33 @@ footer p {
         transition-duration: 0.01ms !important;
     }
 
+}
+
+/* Flechas del carrusel dentro del recuadro */
+.carousel-window {
+    position: relative;
+}
+
+.carousel-btn {
+    top: 50%;
+}
+
+@media (max-width: 600px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .carousel-btn.prev {
+        left: 12px;
+    }
+
+    .carousel-btn.next {
+        right: 12px;
+    }
+
+    .review-slide {
+        padding: 14px;
+    }
 }
